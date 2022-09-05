@@ -3,6 +3,7 @@ import "./App.css";
 
 import useGetRequest from "./components/useGetRequest";
 import ProductList from "./components/ProductList";
+import ShoppingCart from "./components/ShoppingCart";
 
 function App() {
 	const {
@@ -13,6 +14,7 @@ function App() {
 
 	return (
 		<div className="App">
+			<ShoppingCart />
 			<ProductList products={products} />
 		</div>
 	);
