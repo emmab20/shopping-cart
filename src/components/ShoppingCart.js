@@ -20,6 +20,16 @@ const ShoppingCart = () => {
 
 	const { shoppingCart } = useContext(ShoppingCartContext);
 
+	const [total, setTotal] = useState(0);
+
+	useEffect(() => {
+		let priceTotal = 0;
+		for (let i = 0; i < shoppingCart.length; i++) {
+			priceTotal += shoppingCart[i].price;
+		}
+		setTotal(priceTotal);
+	}, [shoppingCart]);
+
 	const addItem = (id) => {};
 
 	return (
@@ -35,6 +45,7 @@ const ShoppingCart = () => {
 					</p>
 				</div>
 			))}
+			<p>Total: {total}</p>
 		</section>
 	);
 };
