@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import useGetRequest from "./useGetRequest";
+import { ShoppingCartContext } from "./useShoppingCart";
 
 const ShoppingCart = () => {
 	const [cart, setCart] = useState([
@@ -17,14 +18,21 @@ const ShoppingCart = () => {
 		},
 	]);
 
+	const { shoppingCart } = useContext(ShoppingCartContext);
+
+	const addItem = (id) => {};
+
 	return (
 		<section className="cart">
 			<h1>Shopping Cart</h1>
-			{cart.map((product) => (
-				<div id={product.id}>
-					<h1>{product.title}</h1>
-					<h2>{product.description}</h2>
-					<h2>{product.quantity}</h2>
+			{shoppingCart.map((product) => (
+				<div key={product.id} id={product.id}>
+					<p>
+						{product.title} - <button>-</button>
+						{product.quantity}
+						<button>+</button>
+						{product.price}
+					</p>
 				</div>
 			))}
 		</section>

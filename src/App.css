@@ -1,38 +1,141 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color: #ffc107;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --link-color: #007bff;
+
+  --sports-color: #ffc107;
+  --arts-color: #28a745;
+  --tech-color: #17a2b8;
+  --science-color: #dc3545;
+  --food-color: #ffc107;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: var(--light-color);
+  font-family: "Poppins", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+section img {
+  width: 100%;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  grid-gap: 20px;
+
+}
+
+.product {
+  background-color: white;
+  padding: 10px;
+}
+
+.sports {
+  background-color: var(--sports-color);
+}
+
+.arts {
+  background-color: var(--arts-color);
+}
+
+.tech {
+  background-color: var(--tech-color);
+}
+
+.science {
+  background-color: var(--science-color);
+}
+
+.food {
+  background-color: var(--food-color);
+}
+
+.topic {
+  color: white;
+  font-size: 9px;
+  text-transform: uppercase;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+@media (min-width:600px) {
+  .products {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.showcase {
+  background-image: url("https://images.pexels.com/photos/235767/pexels-photo-235767.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  height: 40vh;
+  padding: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.showcase p {
+  width: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.btn {
+  border: none;
+  background-color: var(--dark-color);
+  color: white;
+  padding: 10px;
+}
+
+.btn:hover {
+  opacity: .9;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  font-weight: bold;
+  padding: 20px;
+}
+
+nav a:hover {
+  opacity: 0.9;
+}
+
+footer {
+  background-color: var(--dark-color);
+  color: white;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 24px;
+}
+
+.column2 input {
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.column3 a {
+  color: white;
+}
+
+.column3 a:hover {
+  color: red;
+}
+
+.footer-container input[type='email'] {}
+
+@media (min-width:600px) {
+  footer {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
