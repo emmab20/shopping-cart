@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+import useGetRequest from "./components/useGetRequest";
+import ProductList from "./components/ProductList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const {
+		data: products,
+		isLoading,
+		errorMessage,
+	} = useGetRequest("https://fakestoreapi.com/products/");
+
+	return (
+		<div className="App">
+			<ProductList products={products} />
+		</div>
+	);
 }
 
 export default App;
